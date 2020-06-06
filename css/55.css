@@ -1,0 +1,55 @@
+@charset "utf-8";
+body{
+    background-color: #ab4ef2;
+    position: relative;
+    z-index: -100;
+}
+/* banner */
+.banner{
+    height: 506px;
+    background: url(../images/55_bg.jpg)no-repeat center;
+}
+.banner a{
+    display: block;
+    width: 650px;
+    height: 300px;
+    position: absolute;
+    top: 400px;
+    left: 50%;
+    margin-left: -250px;
+}
+.case-wrap{
+    width: 1005px;
+    height: 415px;
+    margin: 0 auto;
+}
+.case-wrap a{
+    display: block;
+}
+.case-wrap .case-top a{
+    width: 496px;
+    height: 157px;
+    float: left;
+    margin: 20px 2px;
+}
+.case-wrap .case-bottom a{
+    width: 1005px;
+    height: 217px;
+}
+.commod h6{
+    height: 50px;
+    line-height: 50px;
+    font-size: 30px;
+    text-align: center;
+    margin-bottom: 10px;
+    color: #fff;
+}
+.commod .commod-wrap .commod-list .commod-pro .pro_imgbox i{
+    width: 90px;
+    height: 90px;
+    position: absolute;
+    z-index: 100;
+    right:0;
+}
+
+

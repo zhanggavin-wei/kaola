@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>我的购物车</title>
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/common.css">
+    <link rel="stylesheet" href="./css/regandlogincommon.css">
+    <link rel="stylesheet" href="./css/shopingcar.css">
+    <link rel="stylesheet" href="./css/likes.css">
+    <link rel="stylesheet" href="./iconfont/iconfont.css">
+</head>
+
+<body>
+    <!-- link55 -->
+    <div class="link55">
+        <a href="55.html">
+            <img src="./images/55top_bg.jpg" alt="">
+        </a>
+    </div>
+    <!-- topshow -->
+    <div class="topshow">
+        <div class="topshow-wrap">
+            <div class="tops_left">
+                <ul>
+                    <!-- 第一个li后添加cookie -->
+                    <li id="welcome-box">考拉欢迎你!
+                        <span id="userSpan"></span>
+                        <input id="btnLogout" type="button" value="注销">
+                    </li>
+                    <li id="login-box">
+                        <input id="btnLogin" type="button" value="请登录!">
+                        <input id="btnReg" type="button" value="免费注册">
+                    </li>
+                    <li id="ma">
+                        <a>手机考拉</a>
+                        <div class="demo">
+                            <img src="./images/ma_03.jpg" alt="">
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="tops_right">
+                <ul id=toplinks>
+                    <li class="links">每日签到</li>
+                    <li class="links">我的订单</li>
+                    <li class="links wo">
+                        <a href=""> 个人中心</a>
+                        <span class="iconfont icon-xiajiantou"></span>
+                        <div class="mycon">
+                            <a href="">
+                                我的优惠卷
+                            </a>
+                            <a href="">
+                                我的红包
+                            </a>
+                            <a href="">
+                                我的考拉豆
+                            </a>
+                            <a href="">
+                                账号管理
+                            </a>
+                            <a href="">
+                                我的实名认证
+                            </a>
+                            <a href="">
+                                我的发票抬头
+                            </a>
+                            <a href="">
+                                我收藏的商品
+                            </a>
+                            <a href="">
+                                我关注的品牌
+                            </a>
+                            <a href="">
+                                售后管理
+                            </a>
+                        </div>
+                    </li>
+                    <li class="links wo">
+                        <a href="">客户服务</a>
+                        <span class="iconfont icon-xiajiantou"></span>
+                        <div class="mycon">
+                            <a href="">
+                                联系客服
+                            </a>
+                            <a href="">
+                                帮助中心
+                            </a>
+                            <a href="">
+                                知识产权保护
+                            </a>
+                            <a href="">
+                                规则中心
+                            </a>
+                        </div>
+                    </li>
+                    <li class="links wo">
+                        <a href="">充值中心</a>
+                        <span class="iconfont icon-xiajiantou"></span>
+                        <div class="mycon">
+                            <a href="">
+                                话费充值
+                            </a>
+                            <a href="">
+                                游戏充值
+                            </a>
+                            <a href="">
+                                AppStore充值卡
+                            </a>
+                        </div>
+                    </li>
+                    <li class="links wo">
+                        <a href="">消费者权益</a>
+                        <span class="iconfont icon-xiajiantou"></span>
+                        <div class="mycon">
+                            <a href="">
+                                消费者告知书
+                            </a>
+                        </div>
+                    </li>
+                    <li class="links wo">
+                        <a href="">更多</a>
+                        <span class="iconfont icon-xiajiantou"></span>
+                        <div class="mycon">
+                            <a href="">
+                                收藏本站
+                            </a>
+                            <a href="">
+                                新浪微博
+                            </a>
+                            <a href="">
+                                微信公众号
+                            </a>
+                            <a href="">
+                                招商合作
+                            </a>
+                        </div>
+                    </li>
+                    <li class="links">视频内容</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!-- logo -->
+    <div class="logo">
+        <div class="logo-wrap">
+            <a href="index.html"><img src="./images/logo_03.jpg" alt=""></a>
+        </div>
+    </div>
+    <!-- shoppingcar -->
+    <div id="shopingcar">
+        <div class="shopingcar-wrap" id="table">
+            <div class="shoping-top">
+                <h2>我的购物车</h2>
+                <div class="cit-list">
+                    配送至<select id="cit">
+                        <option value="江西"></option>
+                    </select>
+                </div>
+            </div>
+            <div class="shopingcar-con" id="shoppingcarbox">
+            </div>
+            <div class="shopingcar-bottom">
+                <div class="bottom-l float_left">
+                    <input type="checkbox">
+                    <a href="">删除选中商品</a>
+                </div>
+                <ul class="bottom-c float_right">
+                    <li>
+                        <p class="con1">预估税费：<b>-￥0</b></p>
+                    </li>
+                    <li>
+                        已选商品<b id="Total-count"> 0 </b>件
+                        <p>活动优惠：<b>-￥0</b></p>
+                    </li>
+                    <li>
+                        总价(不含运费)： <b id="Total-price">¥0</b>
+                        <p>商品税费(不含运费税): <b>¥0</b></p>
+                    </li>
+                </ul>
+                <div id="go-pay" class="bottom-r float_right">
+                    去结算
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- likes -->
+    <div class="likes">
+        <div class="likes-wrap">
+            <div class="likes_title">
+                <h2>猜你喜欢</h2>
+                <p>根据你的浏览记录推荐的商品</p>
+            </div>
+            <div class="likes_con">
+                <dl>
+                    <dd>
+                        <a class="like-img" href=""><img src="./images/likes-bg.jpg" alt=""></a>
+                    </dd>
+                    <dt>
+                        <a href="">
+                            SHISEIDO 资生堂 安热沙安耐晒小金瓶防晒露
+                        </a>
+                        <div class="prices">
+                            <div class="prices-text">
+                                <h3>￥155</h3>
+                                <p>￥169</p>
+                            </div>
+                            <p>119048人评论</p>
+                        </div>
+                    </dt>
+                </dl>
+                <dl>
+                    <dd>
+                        <a class="like-img" href=""><img src="./images/likes-bg.jpg" alt=""></a>
+                    </dd>
+                    <dt>
+                        <a href="">
+                            SHISEIDO 资生堂 安热沙安耐晒小金瓶防晒露
+                        </a>
+                        <div class="prices">
+                            <div class="prices-text">
+                                <h3>￥155</h3>
+                                <p>￥169</p>
+                            </div>
+                            <p>119048人评论</p>
+                        </div>
+                    </dt>
+                </dl>
+                <dl>
+                    <dd>
+                        <a class="like-img" href=""><img src="./images/likes-bg.jpg" alt=""></a>
+                    </dd>
+                    <dt>
+                        <a href="">
+                            SHISEIDO 资生堂 安热沙安耐晒小金瓶防晒露
+                        </a>
+                        <div class="prices">
+                            <div class="prices-text">
+                                <h3>￥155</h3>
+                                <p>￥169</p>
+                            </div>
+                            <p>119048人评论</p>
+                        </div>
+                    </dt>
+                </dl>
+                <dl>
+                    <dd>
+                        <a class="like-img" href=""><img src="./images/likes-bg.jpg" alt=""></a>
+                    </dd>
+                    <dt>
+                        <a href="">
+                            SHISEIDO 资生堂 安热沙安耐晒小金瓶防晒露
+                        </a>
+                        <div class="prices">
+                            <div class="prices-text">
+                                <h3>￥155</h3>
+                                <p>￥169</p>
+                            </div>
+                            <p>119048人评论</p>
+                        </div>
+                    </dt>
+                </dl>
+            </div>
+        </div>
+    </div>
+    <!-- adv -->
+    <div class="adv">
+        <div class="sapces"></div>
+        <div class="adv-wrap">
+            <div class="adv-con">
+                <div class="box">正</div>
+                <div class="con">
+                    <h3>正品承诺</h3>
+                    <p>正品保障 假一赔十</p>
+                </div>
+            </div>
+            <div class="adv-con">
+                <div class="box">正</div>
+                <div class="con">
+                    <h3>正品承诺</h3>
+                    <p>正品保障 假一赔十</p>
+                </div>
+            </div>
+            <div class="adv-con">
+                <div class="box">正</div>
+                <div class="con">
+                    <h3>正品承诺</h3>
+                    <p>正品保障 假一赔十</p>
+                </div>
+            </div>
+            <div class="adv-con">
+                <div class="box">正</div>
+                <div class="con">
+                    <h3>正品承诺</h3>
+                    <p>正品保障 假一赔十</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- kaolinks -->
+    <div id="kaolinks">
+        <div class="kaolinks-wrap">
+            <ul class="list_box">
+                <li>
+                    <a class="logo" href="">
+                        <img src="./images/logo_03.jpg" alt="">
+                    </a>
+                    <div class="guan">
+                        <p>关注我们：</p>
+                        <div class="webo"><a href="">微博</a></div>
+                        <div class="weixin"><a href="">微信</a></div>
+                    </div>
+                </li>
+                <li>
+                    <dl>
+                        <dd>考拉保障</dd>
+                        <dt><a href="">假一赔十</a></dt>
+                        <dt><a href="">假一赔十</a></dt>
+                    </dl>
+                </li>
+                <li>
+                    <dl>
+                        <dd>考拉保障</dd>
+                        <dt><a href="">假一赔十</a></dt>
+                        <dt><a href="">假一赔十</a></dt>
+                        <dt><a href="">假一赔十</a></dt>
+                        <dt><a href="">假一赔十</a></dt>
+                    </dl>
+                </li>
+                <li>
+                    <dl>
+                        <dd>考拉保障</dd>
+                        <dt><a href="">假一赔十</a></dt>
+                        <dt><a href="">假一赔十</a></dt>
+                        <dt><a href="">假一赔十</a></dt>
+                        <dt><a href="">假一赔十</a></dt>
+                    </dl>
+                </li>
+                <li>
+                    <dl>
+                        <dd>考拉保障</dd>
+                        <dt><a href="">假一赔十</a></dt>
+                        <dt><a href="">假一赔十</a></dt>
+                        <dt><a href="">假一赔十</a></dt>
+                        <dt><a href="">假一赔十</a></dt>
+                    </dl>
+                </li>
+                <li>
+                    <dl>
+                        <dd>考拉保障</dd>
+                        <dt><a href="">假一赔十</a></dt>
+                        <dt><a href="">假一赔十</a></dt>
+                        <dt><a href="">假一赔十</a></dt>
+                    </dl>
+                </li>
+                <li>
+                    <dl>
+                        <dd>考拉保障</dd>
+                        <dt><a href="">假一赔十</a></dt>
+                        <dt><a href="">假一赔十</a></dt>
+                    </dl>
+                </li>
+                <li>
+                    <img class="ma" src="./images/ma.png" alt="">
+                    <p>下载手机版</p>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <!-- bottom -->
+    <div class="bottom">
+        <div class="bottom-wrap">
+            <i><a href="">隐私政策</a></i>-<i><a href="">考拉海购</a></i><br>
+            <i>增值电信业务经营许可证：浙B2-20160288</i><i><a href="">自营经营者信息</a></i><i>（浙）网械平台备字[2018]第00007号</i><br>
+            <i><a href="">浙公网安备 33010802002216号</a></i><i>阿里巴巴版权所有©2003-2020</i><i><a
+                    href="">互联网药品信息服务资格证书编号（浙）-2017-0027</a></i><i><a href="">浙ICi备16011229号</a></i><br>
+            <em>
+                <a class="beian" href="">
+                    <img src="./images/bean.png" alt="">
+                </a>
+            </em>
+            <em>
+                <a class="china" href="">
+                    <img src="./images/china.png" alt="">
+                </a>
+            </em>
+        </div>
+    </div>
+</body>
+
+</html>
+<script src="js/common.js"></script>
+<script src="js/cookieTools.js"></script>
+<script src="./js/cookie.js"></script>
+<script src="js/jquery-3.2.1.min.js"></script>
+<script src="js/check.js"></script>
+<script src="js/shoppingcar.js"></script>

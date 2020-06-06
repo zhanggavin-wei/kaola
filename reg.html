@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>注册</title>
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/regandlogincommon.css">
+    <link rel="stylesheet" href="./css/reg.css">
+</head>
+
+<body>
+    <!-- link55 -->
+    <div class="link55">
+        <a href="55.html">
+            <img src="./images/55top_bg.jpg" alt="">
+        </a>
+    </div>
+    <!-- logo -->
+    <div class="logo">
+        <div class="logo-wrap">
+            <a href="index.html"><img src="./images/logo_03.jpg" alt=""></a>
+        </div>
+    </div>
+    <!-- reg -->
+    <div class="reg">
+        <div class="reg-bg">
+            <img src="./images/reg.jpg" alt="">
+        </div>
+        <div class="reg-wrap">
+            <div class="box">
+                <h2>欢迎注册！</h2>
+                <div class="text">
+                    <i>用户名:</i><input id="userId" type="text" placeholder="数字，字母，下划线组成，不能以数字开头，6-16位">
+                    <p></p>
+                </div>
+                <div class="text">
+                    <i>密码:</i><input id="passId" type="password" placeholder="6-16位数字和字母">
+                    <p></p>
+                </div>
+                <div class="text">
+                    <i>确认密码:</i><input id="pass2Id" type="password" placeholder="6-16位数字和字母">
+                    <p></p>
+                </div>
+                <input id="btnReg" type="button" value="注 册">
+                <div id="messagebox">
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- bottom -->
+    <div id="bottom">
+        <div class="bottom-wrap">
+            <i><a href="">隐私政策</a></i>-<i><a href="">考拉海购</a></i><br>
+            <i>增值电信业务经营许可证：浙B2-20160288</i><i><a href="">自营经营者信息</a></i><i>（浙）网械平台备字[2018]第00007号</i><br>
+            <i><a href="">浙公网安备 33010802002216号</a></i><i>阿里巴巴版权所有©2003-2020</i><i><a
+                    href="">互联网药品信息服务资格证书编号（浙）-2017-0027</a></i><i><a href="">浙ICi备16011229号</a></i><br>
+            <em>
+                <a class="beian" href="">
+                    <img src="./images/bean.png" alt="">
+                </a>
+            </em>
+            <em>
+                <a class="china" href="">
+                    <img src="./images/china.png" alt="">
+                </a>
+            </em>
+        </div>
+    </div>
+</body>
+
+</html>
+<script src="js/ajaxTools.js"></script>
+<script>
+
+    // 定义一个有三个字符的字符串
+    let isRight = [0, 0, 0, 0];   //每个元素表示一个开关；
+
+    let oUser = document.getElementById("userId");
+    let oPass = document.getElementById("passId");
+    let oPass2 = document.getElementById("pass2Id");
+    let oBtnReg = document.getElementById("btnReg");
+
+    // 光标离开用户名的文本框，要做验证：前端验证格式是否正确，后端要验证是否存在
+    oUser.onblur = function () {
+        // 1、先做前端的格式验证
+        isUser();
+        if (isRight[0] == 1) {
+            // 2、去后端验证该用户名是否存在
+            hasUser();
+        }
+    }
+
+    // 前端验证用户名的格式是否正确（正则）
+    function isUser() {
+        // 数字，字母，下划线组成，不能以数字开头，6-16位
+        var reg = /^[_a-zA-Z]\w{5,15}$/;
+        if (reg.test(oUser.value)) {
+            isRight[0] = 1;
+            oUser.nextElementSibling.innerHTML = "√";
+            oUser.nextElementSibling.style.color = "green";
+            oUser.nextElementSibling.style.fontSize = "30px";
+        } else {
+            isRight[0] = 0;
+            oUser.nextElementSibling.innerHTML = "×";
+            oUser.nextElementSibling.style.color = "red";
+            oUser.nextElementSibling.style.fontSize = "30px";
+        }
+    }
+
+
+    // 后端验证用户名是否存在
+    function hasUser() {
+        ajax02({
+            url: "checkUser.php",
+            params: "username=" + oUser.value,
+            callback: function (str) {
+                if (str == "1") {
+                    isRight[3] = 0;
+                    oUser.nextElementSibling.innerHTML = "用户名已被注册";
+                    oUser.nextElementSibling.style.fontSize = "12px";
+                    oUser.nextElementSibling.style.color = "red";
+                } else if (str == "0") {
+                    isRight[3] = 1;
+                    oUser.nextElementSibling.innerHTML = "该用户名可用";
+                    oUser.nextElementSibling.style.fontSize = "12px";
+                    oUser.nextElementSibling.style.color = "green";
+                }
+            },
+        });
+    }
+
+    oBtnReg.onclick = function () {
+        // 1、前端验证要通过    
+        // 2、后端验证（用户名可以使用）也需要通过
+        let sum = 0;
+        // isRight.forEach(item=>sum+=item);
+        isRight.forEach(item => {
+            sum += item;
+        });
+
+        // 3、注册（发送ajax请求）
+        if (sum == 4) {
+            ajax02({
+                method: "post",
+                url: "regSave.php",
+                params: `username=${oUser.value}&userpass=${oPass.value}`,
+                callback: function (str) {
+                    if (str == "1") {
+                        $("messagebox").innerHTML = "注册成功，请<a href='login.html'>登录</a>";
+                    } else if (str == "0") {
+                        $("messagebox").innerHTML = "注册失败！";
+                        $("messagebox").style.color = "red"
+                    }
+                }
+            });
+        } else {
+            $("messagebox").innerHTML = "亲，您还有些信息没有填写正确，请仔细阅读";
+        }
+    }
+
+    oPass.onblur = function () {
+        isPass();
+    }
+
+    oPass.onchange = function () {
+        isRight[2] = 0;
+        isPass2();
+    }
+
+    oPass2.onblur = function () {
+        isPass2();
+    }
+
+
+    // 前端验证密码格式是否正确
+    function isPass() {
+        //6-16位数字和字母
+        var reg = /^[\da-zA-Z]{6,16}$/;
+        if (reg.test(oPass.value)) {
+            isRight[1] = 1;
+            oPass.nextElementSibling.innerHTML = "√";
+            oPass.nextElementSibling.style.fontSize = "30px";
+            oPass.nextElementSibling.style.color = "green";
+        } else {
+            isRight[1] = 0;
+            oPass.nextElementSibling.innerHTML = "×";
+            oPass.nextElementSibling.style.fontSize = "30px";
+            oPass.nextElementSibling.style.color = "red";
+        }
+    }
+
+    // 前端验证重复密码是否相同
+    function isPass2() {
+        // 前提：保证二次输入的密码也必须符合规范（）
+        var reg = /^[\da-zA-Z]{6,16}$/;
+        if (reg.test(oPass2.value)) {
+            isRight[2] = 1;
+            oPass2.nextElementSibling.innerHTML = "√";
+            oPass2.nextElementSibling.style.fontSize = "30px";
+            oPass2.nextElementSibling.style.color = "green";
+        } else {
+            isRight[2] = 0;
+            oPass2.nextElementSibling.innerHTML = "×";
+            oPass2.nextElementSibling.style.fontSize = "30px";
+            oPass2.nextElementSibling.style.color = "red";
+            return;//
+        }
+
+        // 判断了两个密码是否一致
+        if (oPass.value == oPass2.value) {
+            isRight[2] = 1;
+            oPass2.nextElementSibling.innerHTML = "√";
+            oPass2.nextElementSibling.style.fontSize = "30px";
+            oPass2.nextElementSibling.style.color = "green";
+        } else {
+            isRight[2] = 0;
+            oPass2.nextElementSibling.innerHTML = "×";
+            oPass2.nextElementSibling.style.fontSize = "30px";
+            oPass2.nextElementSibling.style.color = "red";
+        }
+
+    }
+
+    function $(str) {
+        return document.getElementById(str);
+    }
+
+</script>

@@ -1,0 +1,349 @@
+@charset "utf-8";
+body{
+    background-color: #fff;
+}
+/* nav */
+.navbox{
+    width: 164px;
+    height: 450px;
+    display: none;
+}
+/* commodity */
+#commodity .commodity-wrap .commodity_title{
+    border-bottom: #ccc 1px solid;
+    font-size: 13px;
+    color: #bbb;
+    position: absolute;
+    z-index: 100;
+    width: 1100px;
+}
+#commodity .commodity_title .title-con{
+    float: left;
+    height: 25px;
+    line-height: 25px;
+    margin: 25px 0;
+}
+#commodity .commodity_title .com1{
+    display: inline-block;
+    border: solid 1px #ccc;
+    background-color: #fff;
+}
+#commodity .commod-more{
+    min-height: 30px;
+    width: 600px;
+    border: #ccc solid 1px;
+    position: absolute;
+    top: 51px;
+    display: none;
+    background-color: #fff;
+}
+#commodity .commodity_title .com1:hover{
+    border-bottom: none;
+    padding-bottom: 1px;
+}
+#commodity .commodity_title .com1 a:hover{
+    color: red;
+}
+#commodity .commod-more a{
+    display: block;
+    width: 72px;
+    padding:5px 5px 5px 30px;
+    float: left;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    background-color: #fff;
+}
+#commodity .commodity_title .iconfont{
+    display: block;
+    float: right;
+    transition: 0.3s;
+}
+/* magn */
+.buy-wrap{
+    margin-top: 120px;
+    background-color: pink;
+}
+#buy .buy_l{
+    float: left;
+}
+#buy #magnbox{
+    position: relative;
+    border: solid 1px #ccc;
+    width: 400px;
+    height: 400px;
+}
+#buy #img-box{       
+    width:300px;
+    min-height: 100px ;
+}
+#buy #img-box>a{
+    display: block;
+    float: left;
+    margin-left: 5px;
+    width: 60px;
+    height: 60px;
+    padding: 20px 5px;
+}
+#buy #img-box>a:hover img{
+    border: red 5px solid;
+}
+#buy #img-box>a>img{
+    width: 100%;
+    height: 100%;
+}
+#buy .mirror-b{
+    display: flex;
+    width: 400px;
+    justify-content: space-around;
+    align-items: center;
+}
+#buy .mirror-b .jiantou{
+    color: #bbb;
+    border: #bbb solid 1px;
+    width: 40px;
+    height: 60px;
+    line-height: 50px;
+    text-align: center;
+}
+#buy .buy_r{
+    float: left;
+    padding-left: 30px;
+}
+#buy .buy_r .buy-title{
+    height: 30px;
+    font-size: 14px;
+    color: #bbb;
+    display: flex;
+    align-items: center;
+}
+#buy .buy_r .buy-title img{
+    width: 25px;
+    height: 25px;
+    margin-right: 10px;
+}
+#buy .buy_r .pro-title{
+    font-size: 20px;
+    font-weight: bold;
+    margin: 5px 0 5px 0;
+}
+#buy .buy_r .buy-probox{
+    height: 100px;
+    width: 650px;
+    padding: 10px 0 20px 10px;
+    background-color: #eee;
+}
+#buy .buy_r .buy-probox{
+    color: rgb(111, 111, 111);
+    font-size: 12px;
+}
+#buy .buy_r .buy-probox .bo_r{
+    font-size: 14px;
+    color: black;
+    line-height: 25px;
+    padding-left: 30px;
+}
+#buy .buy_r .buy-probox  .box_b{
+    padding: 10px 0;
+}
+#buy .buy_r .t1{
+    font-size: 12px;
+    color: rgb(111, 111, 111);
+    padding: 10px 30px 10px 5px;
+}
+#buy .buy_r .imgb img{
+    width: 25px;
+    height: 25px;
+}
+#buy .buy_r #cit{
+    font-size: 12px;
+    width: 100px;
+    display: inline-block;
+}
+#buy .buy_r .t2{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#buy .buy_r .buy-bottom{
+    margin-top: 10px;
+}
+#buy .buy_r .buy-bottom .bot_t{
+    height: 50px;
+   line-height: 50px;
+}
+#buy .buy_r .buy-bottom .bot_t i{
+    border: red solid 2px;
+    padding: 10px 40px;
+    margin: 0 10px;
+
+}
+#buy .buy_r .buy-bottom .bot_t .a1{
+    background-color: rgba(238, 120, 120,0.5);
+    color: red;
+    font-weight: bold;
+}
+#buy .buy_r .buy-bottom .bot_t .a1:hover{
+    background-color: rgba(238, 120, 120,0.1);
+}
+#buy .buy_r .buy-bottom .bot_t .a2{
+    background-color: red;
+    color: #fff;
+    font-weight: bold;
+}
+#buy .buy_r .buy-bottom .bot_t .a2:hover{
+    background-color: rgb(250, 100, 100);
+}
+#buy .buy_r .buy-bottom .bot_t .a3{
+    border: none;
+    font-weight: bold;
+    color: #aaa;
+}
+#buy .buy_r .buy-bottom .bot_b{
+    display: flex;
+    justify-content: start;
+    color: red;
+    height: 30px;
+    font-size: 14px;
+    line-height: 30px;
+    padding-left: 10px;
+}
+#buy .buy_r .buy-bottom .bot_b .p1{
+    margin: 0 5px;
+}
+/* likes */
+.likes-wrap{
+    margin-top: 675px;
+    border: #ccc solid 1px;
+}
+/* tab */
+#tab .show_l{
+    width: 180px;
+    min-height: 500px;
+    float: left;
+}
+.likes-wrap .likes_title{
+    border-bottom: solid #ccc 1px;
+}
+#tab .show_l h3{
+    margin-top: 20px;
+    padding:5px 20px;
+    font-size: 18px;
+    font-weight: bold;
+    border: solid 1px #ccc;
+}
+#tab .show_l .showcon{
+    padding:10px 20px;
+    border: #ccc solid 1px;
+}
+#tab .show_l .showcon a{
+    font-size: 12px;
+}
+#tab .show_l .showcon a:hover{
+    text-decoration: underline;
+}
+#tab .show_l .showcon .pircon{
+    display: flex;
+    justify-content: start;
+    align-items: center;
+}
+#tab .show_l .showcon .pircon i{
+    color: red;
+    font-weight: bold;
+}
+#tab .show_l .showcon .pircon p{
+    color: #aaa;
+    font-size: 12px;
+    text-decoration: line-through;
+}
+#tab .show_l .showcon span a{
+    color: #aaa;
+}
+#tab .show_r{
+    float: left;
+    min-height: 1000px;
+    width: 894px;
+    border: solid #ccc 1px;
+    margin: 20px 0 0 20px;
+}
+#tab .show_r .show-nav{
+    height: 40px;
+    position: sticky;
+    top: 0;
+    background-color: #eee;
+}
+#tab .show_r #nav-left{
+    float: left;
+}
+#tab .show_r #nav-right{
+    float: right;
+}
+/* tab */
+#title{
+    width: 400px;
+    height: 40px;
+}
+
+#tab .show_r .show-nav li{
+    float: left;
+    width: 120px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+}
+#tab #title>li:nth-child(1){
+    background-color: #fff;
+    border-top: red solid 2px;
+    color: red;
+}
+
+#tab #content{
+    box-sizing: border-box;
+    margin-top: 20px;
+}
+
+#tab #content>li{
+    width: 894px;          
+    box-sizing: border-box;
+    display: none;
+}
+
+#tab #content>li:nth-child(1){
+    display: block;
+}
+#tab #content h4{
+    height: 30px;
+    line-height: 30px;
+    font-weight: bold;
+    background-color: #eee;
+    border: 1px #ccc solid;
+}
+#tab #content dl{
+    height: 70px;
+    padding-top: 30px;
+    padding-left: 10px;
+    border: 1px solid #ccc;
+}
+#tab #content dl dd{
+    width: 50px;
+    height: 50px;
+    font-size: 25px;
+    border-radius: 25px;
+    background-color: red;
+    line-height: 50px;
+    text-align: center;
+    color: #fff;
+    float: left;
+}
+#tab #content dl dt{
+    float: left;
+    margin-left: 20px;
+}
+#tab #content dl dt h5{
+    font-size: 18px;
+    font-weight: bold;
+}
+#tab #content dl dt span{
+    font-size: 14px;
+    color: #aaa;
+}

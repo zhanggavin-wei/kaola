@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>登录</title>
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/regandlogincommon.css">
+    <link rel="stylesheet" href="./css/login.css">
+</head>
+
+<body>
+    <!-- link55 -->
+    <div class="link55">
+        <a href="55.html">
+            <img src="./images/55top_bg.jpg" alt="">
+        </a>
+    </div>
+    <!-- logo -->
+    <div class="logo">
+        <div class="logo-wrap">
+            <a href="index.html"><img src="./images/logo_03.jpg" alt=""></a>
+        </div>
+    </div>
+    <!-- login -->
+    <div class="login">
+        <div class="reg-bg">
+            <img src="./images/reg.jpg" alt="">
+        </div>
+        <div class="login-wrap">
+            <div class="box">
+                <h2>会员登录！</h2>
+                <div class="text">
+                    <input id="username" type="text" placeholder="用户名"><span></span>
+                </div>
+                <div class="text">
+                   <input id="userpass" type="password" placeholder="密码">
+                </div>
+                <input id="btnLogin" type="button" value="登录">
+                <div id="messageBox">
+        
+                </div>
+                <div class="regbox">
+                    没有账号？请<a href="reg.html">注册</a>
+                </div>
+            </div>
+        </div>
+    </div>
+        <!-- bottom -->
+        <div id="bottom">
+            <div class="bottom-wrap">
+                <i><a href="">隐私政策</a></i>-<i><a href="">考拉海购</a></i><br>
+                <i>增值电信业务经营许可证：浙B2-20160288</i><i><a href="">自营经营者信息</a></i><i>（浙）网械平台备字[2018]第00007号</i><br>
+                <i><a href="">浙公网安备 33010802002216号</a></i><i>阿里巴巴版权所有©2003-2020</i><i><a
+                        href="">互联网药品信息服务资格证书编号（浙）-2017-0027</a></i><i><a href="">浙ICi备16011229号</a></i><br>
+                <em>
+                    <a class="beian" href="">
+                        <img src="./images/bean.png" alt="">
+                    </a>
+                </em>
+                <em>
+                    <a class="china" href="">
+                        <img src="./images/china.png" alt="">
+                    </a>
+                </em>
+            </div>
+        </div>
+</body>
+
+</html>
+<script src="js/ajaxTools.js"></script>
+<script src="js/cookieTools.js"></script>
+<script>
+    $("btnLogin").onclick = function () {
+        // 发送ajax请求
+        ajax02({
+            method: "post",
+            url: "loginCheck.php",
+            params: `username=${$("username").value}&userpass=${$("userpass").value}`,
+            callback: show
+        })
+    }
+
+    function show(result) {
+        if (result == "1") {
+            addCookie("username",$("username").value,7);
+           
+            $("messageBox").style.cssText = "color:green";
+            $("messageBox").innerHTML = "登录成功！跳转到<a href='index.html'>首页</a>";
+
+        } else if (result == "0") {
+            $("messageBox").style.cssText = "color:red";
+            $("messageBox").innerHTML = "登录失败，用户名或者密码不对！";
+        } else {
+            $("messageBox").style.cssText = "color:red";
+            $("messageBox").innerHTML = "登录失败，服务器出错了！";
+        }
+    }
+
+    function $(str) {
+        return document.getElementById(str);
+    }
+
+
+</script>

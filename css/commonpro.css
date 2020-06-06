@@ -1,0 +1,106 @@
+@charset "utf-8";
+/* nav */
+.navbox{
+    width: 164px;
+    height: 450px;
+    display: none;
+}
+/* commodity */
+.commod-wrap{
+    padding-top: 30px;
+    width: 1050px;
+}
+.commod-wrap .commod-list{
+    min-height: 500px;
+    padding-bottom: 20px;
+}
+.commod-wrap .commod-list .commod-pro{
+    float: left;
+    width: 199px;
+    height: 284px;
+    margin: 0 0 10px 9px;
+    overflow: visible;
+    position: relative;
+    white-space: nowrap;
+}
+.commod-wrap .commod-list .commod-pro .commod-bd{
+    position: relative;
+    min-height: 284px;
+    width: 199px;
+    background-color: #fff;
+    border: 1px solid black;
+}
+.commod-wrap .commod-list .commod-pro .commod-bd:hover{
+    position: absolute;
+    z-index: 1;
+    border-color: red;
+}
+.commod-wrap .commod-list .commod-pro .pro_imgbox{
+    width: 199px;
+    height: 192px;
+}
+.commod-wrap .commod-list .commod-pro .pro_img img{
+    width: 100%;
+    height: 100%;
+}
+.commod-wrap .commod-list .pro_title{
+    position: relative;
+    transition: .5s ease-out;
+    max-height: 22px;
+    line-height: 22px;
+    margin: 3px 15px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+.commod-wrap .commod-list .pro_title a{
+    display: block;
+    color: #333;
+    font-size: 14px;
+    font-weight: 700;
+}
+.commod-wrap .commod-list .pro_title a:hover{
+    text-decoration: underline;
+}
+.commod-wrap .commod-list .commod-pro .pro_title{
+    margin: 3px 5px;
+}
+.commod-wrap .commod-list .commod-pro .commod-bd:hover  .pro_title{
+    max-height: 100px;
+    height: auto;
+    overflow: hidden;
+    white-space: normal;
+    text-overflow: unset;
+    word-wrap: break-word;
+}
+.commod-wrap .commod-list .commod-pro .pro_tip span{
+    color: rgb(110, 109, 109);
+    font-size: 12px;
+}
+.commod-wrap .commod-list .commod-pro .pro_price{
+    display: flex;
+    justify-content: space-between;
+    height: 30px;
+    width: 189px;
+    line-height: 30px;
+    color: red;
+    padding: 5px 5px 0;
+}
+.commod-wrap .commod-list .commod-pro .pro_price h3{
+    font-size: 12px;
+    float: left;
+}
+.commod-wrap .commod-list .commod-pro .pro_price p{
+    font-size: 20px;
+}
+.commod-wrap .commod-list .commod-pro .pro_price span{
+    margin-top: 5px;
+    width: 20px;
+    height: 20px;
+    border: red solid 1px;
+    border-radius: 10px;
+    line-height: 20px;
+    text-align: center;
+    color: #ffffff;
+    background-color: red;
+}

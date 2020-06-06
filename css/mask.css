@@ -1,0 +1,9 @@
+@charset "utf-8";
+/* banner */
+.mask a{
+    color: red;
+}
+.banner{
+    height: 428px;
+    background: url(../images/mask_bg.jpg);
+}
